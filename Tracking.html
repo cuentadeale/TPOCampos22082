@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="./imagenes/android-icon-192x192.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fb5e63848e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Pacifico&family=Smooch&family=Tiro+Gurmukhi&family=Ubuntu:wght@500&display=swap" rel="stylesheet"> 
+    <title>Chad Logistics</title>
+
+</head>
+
+<body>
+    <header>
+
+       <!-- <h2 class="logo">CHAD LOGISTICA</h2>-->
+       <a href="Index.html">
+        <img src="imagenes/logo.png" width="400px" height="110px" class="logo">
+        </a>
+
+       <input type="checkbox" id="check">
+       <label for="check" class="mostrar-menu">
+           &#8801
+       </label>
+        <nav class="menu">
+            <a href="Index.html">Inicio</a>
+            <a href="Quienesomos.html">Sobre nosotros</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="Tracking.html">Tracking</a>
+            <label for="check" class="esconder-menu">
+            &#215
+            </label>
+        </nav>
+
+    </header>
+
+    <body>
+        
+        <section id="tracking">
+            <div class="track-form">
+                <div id="track"></div>
+                <!--Caja de entrada para el número de seguimiento.-->
+                <input type="text" id="YQNum" maxlength="50"/>
+                <!--El botón se usa para llamar al método del script.-->
+                <input type="button" id="numtrack" value="Inserte numero de Tracking" onclick="doTrack()"/>
+                <!--Contenedor para mostrar el resultado del seguimiento.-->
+                <div id="YQContainer"></div>
+            
+                <script type="text/javascript" src="//www.17track.net/externalcall.js"></script>
+                <script type="text/javascript">
+                    function doTrack() {
+                    var num = document.getElementById("YQNum").value;
+                    if(num===""){
+                        alert("Inserte el numero de tracking."); 
+                        return;
+                    }
+                    YQV5.trackSingle({
+                        //Obligatorio, especifica el ID del contenedor del contenido del host.
+                        YQ_ContainerId:"YQContainer",
+                        //Opcional, especifica la altura del resultado, máximo 800px,el valor predeterminado es 560px.
+                        YQ_Height:800,
+                        //Opcional, selecciona el transportista, por defecto es auto-identificar.
+                        YQ_Fc:"0",
+                        //Opcional, especifica el idioma del UI, defecto se detecta automáticamente de los ajustes del navegador.
+                        YQ_Lang:"en",
+                        //Obligatorio, especifica el número que va a ser seguido.
+                        YQ_Num:num
+                    });
+                }
+                </script>
+
+            </div>
+
+
+        </section>
+    </body>
+
+    <!-------------------- FOOTER ------------------------->
+
+
+    <footer>
+        
+        <p>&copy; 2022 Chad shipping logistic</p>
+ 
+    </footer>
+    
+</body>
+
+
+</html>
