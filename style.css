@@ -14,6 +14,13 @@ margin: 0;
 
 input[type=number] { -moz-appearance:textfield; }
 
+iframe{
+    padding: 20px;
+    margin: 10px;
+    max-width: 500px;
+    width: 50vw;
+    height: 40vh;
+}
 /*header*/
 
 header{
@@ -210,6 +217,10 @@ header{
     color: rgb(124, 177, 212);
 }
 
+#nosotrosinfo mapag{
+    border-radius: 100px;
+
+}
 
 /*********************************** ICONOS *************************************/
 
@@ -354,6 +365,7 @@ form textarea::placeholder{
     margin: 10px;
 }
 
+
 /*****tracking*****/
 
 .track-form{
@@ -364,6 +376,8 @@ form textarea::placeholder{
     text-align: center;
 
 }
+
+
 
 
 /*****footer*****/
